@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, {Document} from 'mongoose';
 import {userModel} from './user-model';
 import {Article} from './article';
 
