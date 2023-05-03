@@ -70,9 +70,9 @@ const dummy = {
 };
 // remove sample document after any test to avoid object id redundancy 
 afterEach(async()=>{
-  await Comment.collection.remove({})
-  await Article.collection.remove({})
-  await userModel.collection.remove({})
+  await Comment.collection.deleteOne({})
+  await Article.collection.deleteOne({})
+  await userModel.collection.deleteOne({})
   
   
 });

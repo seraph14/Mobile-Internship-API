@@ -9,7 +9,7 @@ export const getMany = async (req: Request, res: Response) => {
 }
 
 export const getOne = async (req: Request, res: Response) => {
-    if (!mongoose.Types.ObjectId.isValid(req.params.id))
+    if (!mongoose.isValidObjectId(req.params.id))
         return res.status(404).send('Invalid ID');
 
     const article = await Article.findById(req.params.id);
@@ -35,7 +35,7 @@ export const createArticle = async (req: Request, res: Response) => {
 }
 
 export const updateOne = async (req: Request, res: Response) => {
-    if (!mongoose.Types.ObjectId.isValid(req.params.id))
+    if (!mongoose.isValidObjectId(req.params.id))
         return res.status(404).send('Invalid ID');
 
     let article = await Article.findById(req.params.id);
@@ -56,7 +56,7 @@ export const updateOne = async (req: Request, res: Response) => {
 }
 
 export const deleteOne = async (req: Request, res: Response) => {
-    if (!mongoose.Types.ObjectId.isValid(req.params.id))
+    if (!mongoose.isValidObjectId(req.params.id))
         return res.status(404).send('Invalid ID');
 
     const article = await Article.findByIdAndRemove(req.params.id);
