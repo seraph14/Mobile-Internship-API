@@ -7,12 +7,13 @@ console.log(DB_URI);
 
 
 mongoose.connect(DB_URI, {
+    ssl: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
 .then(() => {
     console.log("Connected to mongodb...")
-    // app.listen(PORT, () => console.log('Server running...'));
+    app.listen(PORT, () => console.log('Server running...'));
 })
 .catch((err: any) => console.log('Error occurred while connecting', err));
 
