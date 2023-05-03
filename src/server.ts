@@ -7,9 +7,10 @@ console.log(DB_URI);
 
 
 mongoose.connect(DB_URI, {
-    ssl: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: true,
+    useCreateIndex: true,
 })
 .then(() => {
     console.log("Connected to mongodb...")
