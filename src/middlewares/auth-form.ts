@@ -13,9 +13,7 @@ export const authFormRequest = (schemaName: string) => async (req: Request, res:
         createUser: () =>
             Joi.object({
                 password: Joi.string().min(4).required(),
-
-                repeat_password: Joi.ref('password'),
-
+                
                 email: Joi.string().email().max(256).required(),
             }),
         forgetPassword: () =>
